@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    class Program
+    public class Program
     {
+
         static void Main(string[] args)
         {
             var input = "";
             Display display = new Display();
             BalanceSystem balanceSystem = new BalanceSystem();
-
-            Console.WriteLine(display.Greeting());
+            StockItem.CreateStock();
 
             do
             {
-                input = Console.ReadLine().ToLower();
+                Console.WriteLine(display.Greeting());
+                input = Keypad.TakeInput();
                 balanceSystem.cashOrCard(input);
             } while (!(input == "card" || input == "cash"));
+        }
+
+        public void Other()
+        {
         }
         
     }

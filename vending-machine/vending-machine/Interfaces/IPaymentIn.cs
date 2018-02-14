@@ -8,5 +8,6 @@ namespace vending_machine
 {
     interface IPaymentIn
     {
+        void TakePayment();
     }
 }

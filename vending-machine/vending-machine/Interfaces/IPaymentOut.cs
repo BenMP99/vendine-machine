@@ -8,6 +8,5 @@ namespace vending_machine
 {
     public interface IPaymentOut
     {
-        int Balance(int input);
     }
 }

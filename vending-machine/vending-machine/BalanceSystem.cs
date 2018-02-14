@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    public class BalanceSystem : IPaymentOut
+    public class BalanceSystem
     {
-        public int Balance(int input)
+        public decimal balance = 0;
+        
+        public void Balance(decimal input)
         {
-            var balance = input;
-            return balance;
-            //does this need to return value? Cant just call it then to access balance variable. But needs to return for interface. Cant access balance in ChangeDispenser without returning.
+            balance += input;
         }
 
         public void cashOrCard(string input)
@@ -20,12 +20,12 @@ namespace vending_machine
             if (input == "cash")
             {
                 CashCollector cashCollector = new CashCollector();
-                cashCollector.TakeCash();
+                cashCollector.TakePayment();
             }
             else if (input == "card")
             {
                 CardSlot cardSlot = new CardSlot();
-                cardSlot.takeCard(true);
+                cardSlot.TakePayment();
             }
         }
     }

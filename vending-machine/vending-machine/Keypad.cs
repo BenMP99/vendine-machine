@@ -8,9 +8,10 @@ namespace vending_machine
 {
     class Keypad
     {
-        public static void TakeInput()
+        public static string TakeInput()
         {
-            var input = Console.ReadLine();
+            var input = Console.ReadLine().ToLower();
+            return input;
         }
     }
 }

@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    class CashCollector
-    {
-        public void TakeCash()
+    class CashCollector : IPaymentIn
+   {
+        public void TakePayment()
         {
-            Console.WriteLine("How much cash are you inserting?");
+            Display display = new Display();
+            display.AskCashOrCard();
+
             BalanceSystem balanceSystem = new BalanceSystem();
-            balanceSystem.Balance(Convert.ToInt32(Console.ReadLine()));
+            balanceSystem.Balance(Convert.ToDecimal(Keypad.TakeInput()));
+
+            Console.WriteLine(balanceSystem.balance);
+            Console.ReadLine();
         }
     }
 }

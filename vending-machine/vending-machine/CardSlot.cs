@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    class CardSlot
+    class CardSlot : IPaymentIn
     {
-        public void takeCard(bool input)
+        public bool cardInserted = false;
+
+        public void TakePayment()
         {
-            var cardInserted = false;
+            cardInserted = true;
         }
     }
 }

@@ -11,10 +11,16 @@ namespace vending_machine
         public void DispenseChange()
         {
             BalanceSystem balanceSystem = new BalanceSystem();
+            Display display = new Display();
 
-            if (balanceSystem.Balance() > 0)
+            if (balanceSystem.balance > 0)
             {
-
+                balanceSystem.balance = 0;
+                display.DispenseChange();
+            }
+            else
+            {
+                display.NoChangeToDispense();
             }
         }
     }
