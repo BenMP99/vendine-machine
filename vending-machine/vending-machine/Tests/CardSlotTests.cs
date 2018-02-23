@@ -21,7 +21,9 @@ namespace vending_machine.Tests
         public void ShouldSetCardInsertedToTrueAfterCallingTakeCard()
         {
             CardSlot cardSlot = new CardSlot();
-            cardSlot.TakePayment();
+            Display display = new Display();
+            Keypad keypad = new Keypad();
+            cardSlot.TakePayment(display, keypad);
             Assert.AreEqual(true, cardSlot.cardInserted);
         }
     }

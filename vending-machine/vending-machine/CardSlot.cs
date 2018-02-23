@@ -10,7 +10,7 @@ namespace vending_machine
     {
         public bool cardInserted = false;
 
-        public void TakePayment()
+        public void TakePayment(Display display, Keypad keypad)
         {
             cardInserted = true;
         }

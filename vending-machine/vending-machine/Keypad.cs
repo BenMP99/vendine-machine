@@ -6,11 +6,27 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    class Keypad
+    public class Keypad
     {
-        public static string TakeInput()
+        public string TakeInput()
         {
             var input = Console.ReadLine().ToLower();
+            Console.Clear();
+            return input;
+        }
+
+        public string TakeBalance(Display display)
+        {
+            string input;
+            decimal temp;
+            do
+            {
+                Console.Clear();
+                display.AskCashAmount();
+                input = Console.ReadLine();
+            } while (!(decimal.TryParse(input, out temp)));
+
+            Console.Clear();
             return input;
         }
     }

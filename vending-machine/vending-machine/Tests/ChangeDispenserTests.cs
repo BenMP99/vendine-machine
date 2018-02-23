@@ -14,10 +14,9 @@ namespace vending_machine.Tests
         [Test]
         public void ShoudDisplayCorrectMessageWhenBalanceIsGreaterThan0()
         {
-            BalanceSystem balanceSystem = new BalanceSystem();
             ChangeDispenser changeDispenser = new ChangeDispenser();
 
-            balanceSystem.balance = 10;
+            BalanceSystem.balance = 10;
 
             changeDispenser.DispenseChange();
         }

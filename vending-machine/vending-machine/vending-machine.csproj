@@ -79,6 +79,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockItem.cs" />
+    <Compile Include="StockItemList.cs" />
     <Compile Include="Tests\BalanceSystemTests.cs" />
     <Compile Include="Tests\CardSlotTests.cs" />
     <Compile Include="Tests\CashCollectorTests.cs" />

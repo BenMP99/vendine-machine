@@ -8,24 +8,24 @@ namespace vending_machine
 {
     public class BalanceSystem
     {
-        public decimal balance = 0;
+        public static decimal balance = 0;
         
         public void Balance(decimal input)
         {
             balance += input;
         }
 
-        public void cashOrCard(string input)
+        public void cashOrCard(string input, Display display, Keypad keypad)
         {
             if (input == "cash")
             {
                 CashCollector cashCollector = new CashCollector();
-                cashCollector.TakePayment();
+                cashCollector.TakePayment(display, keypad);
             }
             else if (input == "card")
             {
                 CardSlot cardSlot = new CardSlot();
-                cardSlot.TakePayment();
+                cardSlot.TakePayment(display, keypad);
             }
         }
     }

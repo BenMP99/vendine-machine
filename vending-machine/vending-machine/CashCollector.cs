@@ -8,16 +8,12 @@ namespace vending_machine
 {
     class CashCollector : IPaymentIn
    {
-        public void TakePayment()
+        public void TakePayment(Display display, Keypad keypad)
         {
-            Display display = new Display();
-            display.AskCashOrCard();
-
             BalanceSystem balanceSystem = new BalanceSystem();
-            balanceSystem.Balance(Convert.ToDecimal(Keypad.TakeInput()));
-
-            Console.WriteLine(balanceSystem.balance);
-            Console.ReadLine();
+            balanceSystem.Balance(Math.Round(Convert.ToDecimal(keypad.TakeBalance(display)), 2));
+            
+            display.DisplayBalance();
         }
     }
 }

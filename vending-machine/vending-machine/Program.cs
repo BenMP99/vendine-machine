@@ -14,14 +14,16 @@ namespace vending_machine
             var input = "";
             Display display = new Display();
             BalanceSystem balanceSystem = new BalanceSystem();
-            StockItem.CreateStock();
+            Keypad keypad = new Keypad();
 
             do
             {
-                Console.WriteLine(display.Greeting());
-                input = Keypad.TakeInput();
-                balanceSystem.cashOrCard(input);
+                display.Greeting();
+                input = keypad.TakeInput();
+                balanceSystem.cashOrCard(input, display, keypad);
             } while (!(input == "card" || input == "cash"));
+
+            display.DisplayStock();
         }
 
         public void Other()

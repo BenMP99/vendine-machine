@@ -10,11 +10,6 @@ namespace vending_machine.Tests
     [TestFixture]
     class VendingMachineTests
     {
-        [Test]
-        public void ShouldDisplaysGreetingMessage()
-        {
-            Display display = new Display();
-            Assert.AreEqual("Please insert either cash to add balance, or a card", display.Greeting());
-        }
+        
     }
 }
