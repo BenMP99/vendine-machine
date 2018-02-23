@@ -13,17 +13,19 @@ namespace vending_machine.Tests
         [Test]
         public void ShouldSetCardInsertedToFalse()
         {
-            CardSlot cardSlot = new CardSlot();
+            Display display = new Display();
+            Keypad keypad = new Keypad();
+            CardSlot cardSlot = new CardSlot(display, keypad);
             Assert.AreEqual(false, cardSlot.cardInserted);
         }
 
         [Test]
         public void ShouldSetCardInsertedToTrueAfterCallingTakeCard()
         {
-            CardSlot cardSlot = new CardSlot();
             Display display = new Display();
             Keypad keypad = new Keypad();
-            cardSlot.TakePayment(display, keypad);
+            CardSlot cardSlot = new CardSlot(display, keypad);
+            cardSlot.TakePayment();
             Assert.AreEqual(true, cardSlot.cardInserted);
         }
     }

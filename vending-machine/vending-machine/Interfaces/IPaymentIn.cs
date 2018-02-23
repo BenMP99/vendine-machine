@@ -8,6 +8,6 @@ namespace vending_machine
 {
     interface IPaymentIn
     {
-        void TakePayment(Display display, Keypad keypad);
+        void TakePayment();
     }
 }

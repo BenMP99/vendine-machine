@@ -11,5 +11,10 @@ namespace vending_machine.Tests
     [TestFixture]
     class KeypadTests
     {
+        [Test]
+        public void ShouldReturnInputtedValue()
+        {
+
+        }
     }
 }

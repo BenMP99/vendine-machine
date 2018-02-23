@@ -11,6 +11,14 @@ namespace vending_machine.Tests
     [TestFixture]
     class CashCollectorTests
     {
-        
+        [Test]
+        public void ShouldAssignTheBalance()
+        {
+            BalanceSystem balanceSystem = new BalanceSystem();
+            Display display = new Display();
+            balanceSystem.Balance(2.80M);
+
+            display.DisplayBalance();
+        }
     }
 }

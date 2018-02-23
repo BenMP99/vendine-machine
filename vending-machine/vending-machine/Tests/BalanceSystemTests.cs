@@ -13,9 +13,11 @@ namespace vending_machine.Tests
     class BalanceSystemTests
     {
         [Test]
-        public void ShouldCallTakePayment()
+        public void ShouldAddToBalance()
         {
-           
+            BalanceSystem balanceSystem = new BalanceSystem();
+            balanceSystem.Balance(3);
+            Assert.AreEqual(3, BalanceSystem.balance);
         }
     }
 }

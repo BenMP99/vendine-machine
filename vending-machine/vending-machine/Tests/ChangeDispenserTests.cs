@@ -12,13 +12,15 @@ namespace vending_machine.Tests
     class ChangeDispenserTests
     {
         [Test]
-        public void ShoudDisplayCorrectMessageWhenBalanceIsGreaterThan0()
+        public void ShouldSetBalanceTo0WhenDispensed()
         {
             ChangeDispenser changeDispenser = new ChangeDispenser();
-
             BalanceSystem.balance = 10;
 
             changeDispenser.DispenseChange();
+
+            Assert.AreEqual(0, BalanceSystem.balance);
+
         }
     }
 }

@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace vending_machine
 {
-    class CashCollector : IPaymentIn
+    public class CashCollector : IPaymentIn
    {
-        public void TakePayment(Display display, Keypad keypad)
+       private readonly Display _display;
+       private readonly Keypad _keypad;
+
+       public CashCollector(Display display, Keypad keypad)
+       {
+           _display = display;
+           _keypad = keypad;
+       }
+        public void TakePayment()
         {
             BalanceSystem balanceSystem = new BalanceSystem();
-            balanceSystem.Balance(Math.Round(Convert.ToDecimal(keypad.TakeBalance(display)), 2));
+            balanceSystem.Balance(Math.Round(Convert.ToDecimal(_keypad.TakeBalance(_display)), 2));
             
-            display.DisplayBalance();
+            _display.DisplayBalance();
         }
     }
 }

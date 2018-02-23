@@ -69,6 +69,7 @@
     <Compile Include="BalanceSystem.cs" />
     <Compile Include="CardSlot.cs" />
     <Compile Include="CashCollector.cs" />
+    <Compile Include="PaymentMethod.cs" />
     <Compile Include="ChangeDispenser.cs" />
     <Compile Include="Dispenser.cs" />
     <Compile Include="Display.cs" />

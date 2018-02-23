@@ -13,21 +13,19 @@ namespace vending_machine
         {
             var input = "";
             Display display = new Display();
-            BalanceSystem balanceSystem = new BalanceSystem();
             Keypad keypad = new Keypad();
+            CashCollector cashCollector = new CashCollector(display, keypad);
+            CardSlot cardSlot = new CardSlot(display, keypad);
+            PaymentMethod paymentMethod = new PaymentMethod(cashCollector, cardSlot);
 
             do
             {
                 display.Greeting();
                 input = keypad.TakeInput();
-                balanceSystem.cashOrCard(input, display, keypad);
+                paymentMethod.Choose(input);
             } while (!(input == "card" || input == "cash"));
 
             display.DisplayStock();
-        }
-
-        public void Other()
-        {
         }
         
     }
