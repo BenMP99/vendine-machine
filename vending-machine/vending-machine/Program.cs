@@ -17,6 +17,10 @@ namespace vending_machine
             CashCollector cashCollector = new CashCollector(display, keypad);
             CardSlot cardSlot = new CardSlot(display, keypad);
             PaymentMethod paymentMethod = new PaymentMethod(cashCollector, cardSlot);
+            Dispenser dispenser = new Dispenser();
+            StockItemList stockItemList = new StockItemList();
+            ChangeDispenser changeDispenser = new ChangeDispenser();
+            BalanceSystem balanceSystem = new BalanceSystem();
 
             do
             {
@@ -26,6 +30,7 @@ namespace vending_machine
             } while (!(input == "card" || input == "cash"));
 
             display.DisplayStock();
+            dispenser.DispenseStock(keypad.TakeStockItem(), stockItemList, cardSlot, keypad, changeDispenser, display, balanceSystem);
         }
         
     }

@@ -29,5 +29,19 @@ namespace vending_machine
             Console.Clear();
             return input;
         }
+
+        public int TakeStockItem()
+        {
+            string input;
+            int intInput;
+            int temp;
+            do
+            {
+                input = Console.ReadLine();
+            } while (!(int.TryParse(input, out temp)));
+
+            intInput = int.Parse(input);
+            return intInput;
+        }
     }
 }

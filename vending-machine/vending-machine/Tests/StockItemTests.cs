@@ -13,7 +13,7 @@ namespace vending_machine.Tests
         [Test]
         public void ShouldAssignAttributesUsingConstructor()
         {
-            StockItem water = new StockItem("Water", 0.5, 0);
+            StockItem water = new StockItem("Water", 0.5m, 0);
 
             Assert.AreEqual("Water", water.GetName());
             Assert.AreEqual(0.5, water.GetPrice());

@@ -16,11 +16,11 @@ namespace vending_machine
             StockItem snicker = new StockItem("Snicker", 1, 0);
             StockItem marsBar = new StockItem("Mars bar", 1, 1);
             StockItem kitkat = new StockItem("Kitkat", 1, 2);
-            StockItem smarties = new StockItem("Smarties", 0.5, 3);
-            StockItem water = new StockItem("Water", 0.5, 4);
-            StockItem coke = new StockItem("Coke", 0.79, 5);
-            StockItem fanta = new StockItem("Fanta", 0.79, 6);
-            StockItem iceTea = new StockItem("Ice tea", 1.29, 7);
+            StockItem smarties = new StockItem("Smarties", 0.5m, 3);
+            StockItem water = new StockItem("Water", 0.5m, 4);
+            StockItem coke = new StockItem("Coke", 0.79m, 5);
+            StockItem fanta = new StockItem("Fanta", 0.79m, 6);
+            StockItem iceTea = new StockItem("Ice tea", 1.29m, 7);
 
             stockList.Add(snicker);
             stockList.Add(marsBar);

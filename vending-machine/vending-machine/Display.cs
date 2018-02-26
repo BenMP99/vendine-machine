@@ -31,7 +31,7 @@ namespace vending_machine
 
         public void DisplayBalance()
         {
-            Console.WriteLine("Your balance is: £" + BalanceSystem.balance);
+            Console.WriteLine("Your balance is: £" + BalanceSystem.balance.ToString("F"));
             Console.WriteLine();
         }
 
@@ -44,10 +44,8 @@ namespace vending_machine
 
             for (int i = 0; i < calledList.Count; i++)
             {
-                Console.WriteLine((calledList[i].GetId() + 1) + ". " + calledList[i].GetName());
+                Console.WriteLine((calledList[i].GetId() + 1) + ". " + calledList[i].GetName() + " - £" + calledList[i].GetPrice().ToString("F"));
             }
-
-            Console.ReadLine();
         }
     }
 }

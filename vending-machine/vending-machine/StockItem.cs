@@ -9,11 +9,11 @@ namespace vending_machine
     class StockItem
     {
         private string name;
-        private double price;
+        private decimal price;
         private int id;
         public static int instances = 0;
 
-        public StockItem(string n, double p, int i)
+        public StockItem(string n, decimal p, int i)
         {
             this.name = n;
             this.price = p;
@@ -26,7 +26,7 @@ namespace vending_machine
             return name;
         }
 
-        public double GetPrice()
+        public decimal GetPrice()
         {
             return price;
         }
