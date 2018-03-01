@@ -29,9 +29,9 @@ namespace vending_machine
             Console.WriteLine("No remaining balance to dispense");
         }
 
-        public void DisplayBalance()
+        public void DisplayBalance(BalanceSystem balanceSystem)
         {
-            Console.WriteLine("Your balance is: £" + BalanceSystem.balance.ToString("F"));
+            Console.WriteLine("Your balance is: £" + balanceSystem.balance.ToString("F"));
             Console.WriteLine();
         }
 

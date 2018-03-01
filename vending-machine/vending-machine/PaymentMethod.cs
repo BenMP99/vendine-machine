@@ -16,15 +16,15 @@ namespace vending_machine
             _cashCollector = cashCollector;
             _cardSlot = cardSlot;
         }
-        public void Choose(string input)
+        public void Choose(string input, BalanceSystem balanceSystem)
         {
             if (input == "cash")
             {
-                _cashCollector.TakePayment();
+                _cashCollector.TakePayment(balanceSystem);
             }
             else if (input == "card")
             {
-                _cardSlot.TakePayment();
+                _cardSlot.TakePayment(balanceSystem);
             }
         }
     }

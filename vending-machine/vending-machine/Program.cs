@@ -26,7 +26,7 @@ namespace vending_machine
             {
                 display.Greeting();
                 input = keypad.TakeInput();
-                paymentMethod.Choose(input);
+                paymentMethod.Choose(input, balanceSystem);
             } while (!(input == "card" || input == "cash"));
 
             display.DisplayStock();

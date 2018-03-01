@@ -8,7 +8,7 @@ namespace vending_machine
 {
     public class BalanceSystem
     {
-        public static decimal balance = 0;
+        public decimal balance = 0;
 
         public void Balance(decimal input)
         {

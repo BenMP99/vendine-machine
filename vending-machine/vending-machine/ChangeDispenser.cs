@@ -8,13 +8,13 @@ namespace vending_machine
 {
     public class ChangeDispenser
     {
-        public void DispenseChange()
+        public void DispenseChange(BalanceSystem balanceSystem)
         {
             Display display = new Display();
 
-            if (BalanceSystem.balance > 0)
+            if (balanceSystem.balance > 0)
             {
-                BalanceSystem.balance = 0;
+                balanceSystem.balance = 0;
                 display.DispenseChange();
             }
             else

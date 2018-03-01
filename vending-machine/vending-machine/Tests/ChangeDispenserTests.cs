@@ -15,11 +15,12 @@ namespace vending_machine.Tests
         public void ShouldSetBalanceTo0WhenDispensed()
         {
             ChangeDispenser changeDispenser = new ChangeDispenser();
-            BalanceSystem.balance = 10;
+            BalanceSystem balanceSystem = new BalanceSystem();
+            balanceSystem.balance = 10;
 
-            changeDispenser.DispenseChange();
+            changeDispenser.DispenseChange(balanceSystem);
 
-            Assert.AreEqual(0, BalanceSystem.balance);
+            Assert.AreEqual(0, balanceSystem.balance);
 
         }
     }

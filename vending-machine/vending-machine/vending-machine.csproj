@@ -85,8 +85,10 @@
     <Compile Include="Tests\CardSlotTests.cs" />
     <Compile Include="Tests\CashCollectorTests.cs" />
     <Compile Include="Tests\ChangeDispenserTests.cs" />
+    <Compile Include="Tests\DispenserTests.cs" />
     <Compile Include="Tests\DisplayTests.cs" />
     <Compile Include="Tests\KeypadTests.cs" />
+    <Compile Include="Tests\StockItemListTests.cs" />
     <Compile Include="Tests\StockItemTests.cs" />
     <Compile Include="Tests\VendingMachineTests.cs" />
   </ItemGroup>

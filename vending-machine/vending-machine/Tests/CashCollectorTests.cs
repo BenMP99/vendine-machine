@@ -18,7 +18,9 @@ namespace vending_machine.Tests
             Display display = new Display();
             balanceSystem.Balance(2.80M);
 
-            display.DisplayBalance();
+            display.DisplayBalance(balanceSystem);
+
+            Assert.AreEqual(2.80M, balanceSystem.balance);
         }
     }
 }

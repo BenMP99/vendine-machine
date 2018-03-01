@@ -14,12 +14,12 @@ namespace vending_machine
 
             for (int i = 0; i < calledList.Count; i++)
             {
-                if ((stockId - 1) == calledList[i].GetId() && (cardSlot.cardInserted == true || BalanceSystem.balance >= calledList[i].GetPrice()))
+                if ((stockId - 1) == calledList[i].GetId() && (cardSlot.cardInserted == true || balanceSystem.balance >= calledList[i].GetPrice()))
                 {
                     Console.WriteLine("Item has been dispensed.");
                     balanceSystem.Balance(-calledList[i].GetPrice());
                 }
-                else if((stockId - 1) == calledList[i].GetId() && (cardSlot.cardInserted == true || BalanceSystem.balance < calledList[i].GetPrice()))
+                else if((stockId - 1) == calledList[i].GetId() && (cardSlot.cardInserted == true || balanceSystem.balance < calledList[i].GetPrice()))
                 {
                     Console.WriteLine("Not enough money has been deposited to buy this item.");
                 }
@@ -28,13 +28,13 @@ namespace vending_machine
             Console.WriteLine("Type 'again' to buy another item, or press enter to dispense your remaining balance.");
             if (keypad.TakeInput() == "again")
             {
-                display.DisplayBalance();
+                display.DisplayBalance(balanceSystem);
                 display.DisplayStock();
                 DispenseStock(keypad.TakeStockItem(), stockItemList, cardSlot, keypad, changeDispenser, display, balanceSystem);
             }
             else
             {
-                changeDispenser.DispenseChange();
+                changeDispenser.DispenseChange(balanceSystem);
                 Console.ReadLine();
             }
         }

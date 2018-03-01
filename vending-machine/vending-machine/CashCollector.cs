@@ -16,12 +16,11 @@ namespace vending_machine
            _display = display;
            _keypad = keypad;
        }
-        public void TakePayment()
+        public void TakePayment(BalanceSystem balanceSystem)
         {
-            BalanceSystem balanceSystem = new BalanceSystem();
             balanceSystem.Balance(Math.Round(Convert.ToDecimal(_keypad.TakeBalance(_display)), 2));
             
-            _display.DisplayBalance();
+            _display.DisplayBalance(balanceSystem);
         }
     }
 }

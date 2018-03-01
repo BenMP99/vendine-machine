@@ -17,7 +17,7 @@ namespace vending_machine.Tests
         {
             BalanceSystem balanceSystem = new BalanceSystem();
             balanceSystem.Balance(3);
-            Assert.AreEqual(3, BalanceSystem.balance);
+            Assert.AreEqual(3, balanceSystem.balance);
         }
     }
 }

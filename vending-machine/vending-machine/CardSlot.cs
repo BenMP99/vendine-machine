@@ -17,7 +17,7 @@ namespace vending_machine
             _display = display;
             _keypad = keypad;
         }
-        public void TakePayment()
+        public void TakePayment(BalanceSystem balanceSystem)
         {
             cardInserted = true;
         }

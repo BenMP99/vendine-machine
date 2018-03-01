@@ -24,8 +24,9 @@ namespace vending_machine.Tests
         {
             Display display = new Display();
             Keypad keypad = new Keypad();
+            BalanceSystem balanceSystem = new BalanceSystem(); 
             CardSlot cardSlot = new CardSlot(display, keypad);
-            cardSlot.TakePayment();
+            cardSlot.TakePayment(balanceSystem);
             Assert.AreEqual(true, cardSlot.cardInserted);
         }
     }
